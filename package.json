@@ -34,6 +34,8 @@
 	"type": "module",
 	"dependencies": {
 		"@fontsource-variable/exo-2": "^5.0.17",
-		"@fontsource-variable/orbitron": "^5.0.18"
+		"@fontsource-variable/orbitron": "^5.0.18",
+		"@fontsource-variable/source-code-pro": "^5.1.0",
+		"@fontsource/gugi": "^5.1.0"
 	}
 }
