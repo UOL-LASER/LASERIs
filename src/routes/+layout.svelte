@@ -6,8 +6,10 @@
 
     import { onMount } from 'svelte';
 	import Navbar from '../components/navbar.svelte';
+    import TempNavBar from '../components/tempnavbar.svelte';
 	import Footer from '../components/footer.svelte';
 
+	import Tempnavbar from '../components/tempnavbar.svelte';
 
     function setViewportMetaTag() {
         const meta = document.createElement('meta');
@@ -21,10 +23,6 @@
 
 <style>
     .body {
-        background-image: url('$lib/assets/backgnd.png');
-        background-size: cover;
-        background-position: center; 
-
         margin: 0; 
         padding: 0;
         overflow-x: hidden;
@@ -43,6 +41,9 @@
         flex: 1;
     }
 
+    .content-body {
+        background-color: #111111;
+    }
     @media (max-width: 768px) {
         .page {
         padding: 70px 0px 0px 0px;
@@ -50,16 +51,18 @@
     }
 </style>
 
-{#key data.url}
-<div class="body" in:fade={{delay: 300, duration: 600, easing: quintIn}} out:fade={{delay: 150, duration: 300, easing: quintOut}}>
+<div class="body">
     <Navbar />
     <div class="page">
         <main>
             <article class="content-body"> 
-                <slot/>
+                {#key data.url}
+                <div in:fade={{delay: 300, duration: 600, easing: quintIn}} out:fade={{delay: 150, duration: 300, easing: quintOut}}>
+                    <slot />
+                </div>
+                {/key}
             </article>
         </main>
     </div>
     <Footer />
 </div>
-{/key}

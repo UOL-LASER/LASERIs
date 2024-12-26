@@ -1,43 +1,31 @@
-<!--Peter Hamilton 21/2/24-->
+<!--Peter Hamilton 28/2/24-->
 <!-- Navbar.svelte -->
 <script>
     import logo from '$lib/assets/logo-2.png';
     import '@fontsource-variable/exo-2';
     import '@fontsource-variable/orbitron';
-
-    import Dropdown from './resources/dropdown.svelte';
-    
   </script>
   
   <style>
+    /* Add your CSS styles here */
     .navbar {
       background: #111111; 
       display: flex;
       align-items: center;
       position: fixed;
+      justify-content: center;
       top: 0;
       width: 100%;
-      z-index: 999;
+      z-index: 1000;
       padding: 1vh; 
       margin: 0; 
       border-bottom: 1px solid rgb(255, 255, 255);
-    }
-
-    .navbar-brand a {
-      text-decoration: none;
-    }
-
-    .navbar-brand {
-      transition: all 0.3s ease;
-    }
-    .navbar-brand:hover {
-      transform: scale(1.05)
     }
   
     .logo-container {
       display: flex;
       align-items: center;
-      margin-left: 2vw;
+      
     }
   
     .logo-container img {
@@ -115,20 +103,10 @@
   
   <div class="navbar">
     <div class="navbar-brand">
-      <a href="/"><div class="logo-container">
+      <div class="logo-container">
         <img src={logo} alt="LASER Logo">
-        <span class="logo-text">LASERIS</span>
-      </div></a>
-    </div>
-    <div class="navbar-links">
-      <ul>
-        <li>
-          <a class="nav-link" href="/projects" rel="prefetch">Sign-in</a>
-        </li>
-        <li>
-          <a class="nav-link" href="/about" rel="prefetch">Sign-out</a>
-        </li>
-      </ul>
+        <span class="logo-text">LASER</span>
+      </div>
     </div>
   </div>
   
