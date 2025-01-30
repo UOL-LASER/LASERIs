@@ -1,0 +1,11 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:themes="clr-namespace:Material.Styles.Themes;assembly=Material.Styles"
+             x:Class="LASERIS.App"
+             RequestedThemeVariant="Dark">
+
+    <Application.Styles>
+        <!-- Apply Material Design theme with custom colors -->
+        <themes:MaterialTheme PrimaryColor="DeepPurple" SecondaryColor="DeepPurple" />
+    </Application.Styles>
+</Application>

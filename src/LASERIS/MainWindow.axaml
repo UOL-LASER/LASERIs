@@ -1,0 +1,95 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="500"
+        x:Class="LASERIS.MainWindow"
+        Title="LASERIS">
+    <DockPanel>
+        <StackPanel>
+            <TabControl Margin="10">
+                <TabItem Header="Search">
+                    <StackPanel Margin="50" Spacing="20"> 
+                        <TextBlock Text="Search via attribute:" />
+                        <ComboBox x:Name="ISearchTypeInput" Width="200">
+                        <ComboBox.Items>
+                            <ComboBoxItem Content="ID" />
+                            <ComboBoxItem Content="Name" />
+                            <ComboBoxItem Content="Manufacturer Name" />
+                            <ComboBoxItem Content="Serial Number" />
+                            <ComboBoxItem Content="Order Code" />
+                            <ComboBoxItem Content="Item Type" />
+                            <ComboBoxItem Content="Quantity" />
+                            <ComboBoxItem Content="Signed Out To" />
+                            <ComboBoxItem Content="Date Signed Out" />
+                        </ComboBox.Items>
+                    </ComboBox>
+                        
+                        </StackPanel>
+
+                    
+                </TabItem>
+                 <TabItem Header="Item Update">
+                    
+                    
+                </TabItem>
+                <TabItem Header="Item Entry">
+                    <SplitView IsPaneOpen="True"
+                        DisplayMode="Inline"
+                        OpenPaneLength="300">
+                    <SplitView.Pane>
+                        <StackPanel Margin="50" Spacing="10">
+                        <WrapPanel Margin="25" Width="300">
+                            <TextBlock Text="Name:" />
+                            <TextBox x:Name="NameInput" Width="300" />
+                        </WrapPanel>
+
+                        <WrapPanel Margin="25" Width="300">
+                            <TextBlock Text="Manufacturer:" />
+                            <TextBox x:Name="MNameInput" Width="300" />
+                        </WrapPanel>
+
+                        <WrapPanel Margin="25" Width="300">
+                            <TextBlock Text="Description:" />
+                            <TextBox x:Name="DescriptionInput" Width="300" Height="50" />
+                        </WrapPanel>
+
+                        <WrapPanel Margin="25" Width="300">
+                            <TextBlock Text="Serial Number:" />
+                            <TextBox x:Name="SerialNoInput" Width="300" />
+                        </WrapPanel>
+
+                        <WrapPanel Margin="25" Width="300">
+                            <TextBlock Text="Order Code:" />
+                            <TextBox x:Name="OrderNoInput" Width="300" />
+                        </WrapPanel>
+
+                        <WrapPanel Margin="25" Width="300">
+                            <TextBlock Text="Item type:" />
+                            <ComboBox x:Name="ITypeInput" Width="300">
+                                <ComboBox.Items>
+                                    <ComboBoxItem Content="Component" />
+                                    <ComboBoxItem Content="MCU" />
+                                    <ComboBoxItem Content="Other" />
+                                </ComboBox.Items>
+                            </ComboBox>
+                        </WrapPanel>
+
+                        <WrapPanel Margin="25" Width="300">
+                            <Button Content="Submit" Width="100" HorizontalAlignment="Left" />
+                        </WrapPanel>
+                        </StackPanel>
+                    </SplitView.Pane>
+
+                    <Grid>
+                        <TextBlock Text="Content"
+                                FontSize="24"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Center"/>
+                    </Grid>
+                    </SplitView>
+                </TabItem>
+            </TabControl>
+        </StackPanel>
+    </DockPanel>
+</Window>
