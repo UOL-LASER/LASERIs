@@ -19,6 +19,7 @@
       <PrivateAssets Condition="'$(Configuration)' != 'Debug'">All</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Material.Avalonia" Version="3.9.1" />
+    <PackageReference Include="ReactiveUI" Version="20.1.63" />
   </ItemGroup>
 
   <ItemGroup>

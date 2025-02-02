@@ -1,0 +1,54 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="LASERIS.Views.SearchTab">
+    <DockPanel>
+        <SplitView IsPaneOpen="True" DisplayMode="Inline" OpenPaneLength="300">
+            <SplitView.Pane>
+                <StackPanel Margin="50" Spacing="10">
+                    <WrapPanel Margin="17.5" Width="300">
+                        <TextBlock Text="Search via attribute:" />
+                        <ListBox SelectionMode="Single, Toggle" Width="200">
+                            <ListBox.Items>
+                                <ListBoxItem Content="ID" />
+                                <ListBoxItem Content="Name" />
+                                <ListBoxItem Content="Manufacturer Name" />
+                                <ListBoxItem Content="Serial Number" />
+                                <ListBoxItem Content="Order Code" />
+                                <ListBoxItem Content="Item Type" />
+                                <ListBoxItem Content="Signed Out To" />
+                                <ListBoxItem Content="Signed Out To ID" />
+                            </ListBox.Items>
+                        </ListBox>
+                    </WrapPanel>
+                    <WrapPanel Margin="17.5" Width="300">
+                        <TextBlock Text="Date Signed Out: " />
+                        <DatePicker Width="200"/>
+                    </WrapPanel>
+                    <WrapPanel Margin="17.5" Width="300">
+                        <TextBlock Text="Quantity: " />
+                        <ComboBox x:Name="QuantitySelectionInput" Width="200">
+                            <ComboBox.Items>
+                                <ComboBoxItem Content="Zero" />
+                                <ComboBoxItem Content="One" />
+                                <ComboBoxItem Content="More than one" />
+                            </ComboBox.Items>
+                        </ComboBox>
+                    </WrapPanel>
+                    <WrapPanel Margin="17.5" Width="300">
+                        <TextBlock Text="Search Query: " />
+                        <TextBox x:Name="SearchQueryInput" Width="300" />
+                    </WrapPanel>
+                    <WrapPanel Margin="17.5" Width="300">
+                        <Button Content="Submit" Width="100" HorizontalAlignment="Left" />
+                    </WrapPanel> 
+                </StackPanel>
+            </SplitView.Pane>
+            <Grid>
+            <TextBlock Text="No matching entries found"
+                    FontSize="24"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"/>
+            </Grid>
+        </SplitView>
+    </DockPanel>
+</UserControl>
