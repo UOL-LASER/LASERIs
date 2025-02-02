@@ -5,7 +5,10 @@
         xmlns:local="clr-namespace:LASERIS.Views;assembly=LASERIS"
         mc:Ignorable="d" d:DesignWidth="1920" d:DesignHeight="1080"
         x:Class="LASERIS.Views.MainWindow"
-        Title="LASERIS">
+        Title="LASERIS"
+        TransparencyLevelHint="AcrylicBlur"
+        Background="Transparent"
+        ExtendClientAreaToDecorationsHint="True">
     <DockPanel>
         <StackPanel>
             <TabControl Margin="10">

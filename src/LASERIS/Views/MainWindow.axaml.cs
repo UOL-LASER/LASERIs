@@ -8,8 +8,6 @@ namespace LASERIS.Views
         public MainWindow()
         {
             InitializeComponent();
-            // Assign ViewModel
-            DataContext = new MainWindowViewModel();
         }
     }
 
