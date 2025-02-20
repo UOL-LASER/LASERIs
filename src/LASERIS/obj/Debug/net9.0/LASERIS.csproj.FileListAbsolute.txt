@@ -144,3 +144,4 @@ C:/Users/peter/Documents/UOL/COMP122/UOL-COMP122-Assignment-2/LASERIs/src/LASERI
 /home/pa1yn/Documents/GitHub/LASERIs/src/LASERIS/obj/Debug/net9.0/LASERIS.csproj.Up2Date
 /home/pa1yn/Documents/GitHub/LASERIs/src/LASERIS/obj/Debug/net9.0/LASERIS.genruntimeconfig.cache
 /home/pa1yn/Documents/GitHub/LASERIs/src/LASERIS/obj/Debug/net9.0/ref/LASERIS.dll
+/home/pa1yn/Documents/GitHub/LASERIs/src/LASERIS/bin/Debug/net9.0/CommunityToolkit.Mvvm.dll

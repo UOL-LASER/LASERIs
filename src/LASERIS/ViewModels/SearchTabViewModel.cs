@@ -1,17 +1,20 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Windows.Input;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
 using Avalonia.Interactivity;
 using LASERISAPI.Models;
-
+using CommunityToolkit.Mvvm;
+using CommunityToolkit.Mvvm.Input;
 namespace LASERIS.ViewModels
 {
     public class SearchTabViewModel : BaseViewModel
     {
         private List<Entry> allReturnedEntries = new List<Entry>();
-
+        public ICommand QuerySubmitCommand { get; }
+        
         private string? _selectedAttribute;
         public string? SelectedAttribute {
             get => _selectedAttribute;
@@ -56,12 +59,42 @@ namespace LASERIS.ViewModels
             }
         }
 
-        private async Task OnQuerySubmit(object sender, RoutedEventArgs e) {
+
+        public SearchTabViewModel()
+        {
+            QuerySubmitCommand = new AsyncRelayCommand(OnQuerySubmit);
+        }
+
+
+        private async Task OnQuerySubmit() {
             allReturnedEntries.Clear();
             var queryString = $"{_baseApiUrl}?";
 
             if (SelectedAttribute != null) {
-                queryString += $"attribute={SelectedAttribute}&";
+                if (SelectedAttribute.Equals("ID")) {
+                    queryString += $"id={SearchQueryInput}&";
+                }
+                else if (SelectedAttribute.Equals("Name")) {
+                    queryString += $"name={SearchQueryInput}";
+                }
+                else if (SelectedAttribute.Equals("Manufacturer Name")) {
+                    queryString += $"manufacturerName={SearchQueryInput}";
+                }
+                else if (SelectedAttribute.Equals("Serial Number")) {
+                    queryString += $"serialNumber={SearchQueryInput}";
+                }
+                else if (SelectedAttribute.Equals("Order Code")) {
+                    queryString += $"orderCode={SearchQueryInput}";
+                }
+                else if (SelectedAttribute.Equals("Item Type")) {
+                    queryString += $"itemType={SearchQueryInput}";
+                }
+                else if (SelectedAttribute.Equals("Signed Out To")) {
+                    queryString += $"signedOutTo={SearchQueryInput}";
+                }
+                else if (SelectedAttribute.Equals("Signed Out To ID")) {
+                    queryString += $"signedOutToId={SearchQueryInput}";
+                }
             }
             if (SelectedDate != null) {
                 queryString += $"signedOutDate={SelectedDate.Value.Date:yyyy-MM-dd}&";

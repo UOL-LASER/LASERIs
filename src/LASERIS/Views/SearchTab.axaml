@@ -41,7 +41,7 @@
                         <TextBox x:Name="SearchQueryInput" Text="{Binding SearchQueryInput}" Width="300" />
                     </WrapPanel>
                     <WrapPanel Margin="17.5" Width="300">
-                        <Button Click="OnQuerySubmit" Content="Submit" Width="100" HorizontalAlignment="Left" />
+                        <Button Command="{Binding QuerySubmitCommand}" Content="Submit" Width="100" HorizontalAlignment="Left" />
                     </WrapPanel> 
                 </StackPanel>
             </SplitView.Pane>
