@@ -28,7 +28,7 @@
                     </WrapPanel>
                     <WrapPanel Margin="17.5" Width="300">
                         <TextBlock Text="Quantity: " />
-                        <ComboBox x:Name="QuantitySelectionInput" SelectedItem="{Binding SelectedQuantity}" Width="200">
+                        <ComboBox x:Name="QuantitySelectionInput" SelectedItem="{Binding SelectedQuantity}" PlaceholderText="Quantity" Width="200">
                             <ComboBox.Items>
                                 <ComboBoxItem Content="Zero" />
                                 <ComboBoxItem Content="One" />

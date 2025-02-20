@@ -16,7 +16,7 @@ namespace LASERIS.ViewModels
         public string? SelectedAttribute {
             get => _selectedAttribute;
             set {
-                if(_selectedAttribute != value) {
+                if (_selectedAttribute != value) {
                     _selectedAttribute = value;
                     OnPropertyChanged(nameof(SelectedAttribute));
                 }
@@ -27,7 +27,7 @@ namespace LASERIS.ViewModels
         public DateTime? SelectedDate {
             get => _selectedDate;
             set {
-                if(_selectedDate != value) {
+                if (_selectedDate != value) {
                     _selectedDate = value;
                     OnPropertyChanged(nameof(SelectedDate));
                 }
@@ -38,7 +38,7 @@ namespace LASERIS.ViewModels
         public string? SelectedQuantity {
             get => _selectedQuantity;
             set {
-                if(_selectedQuantity != value) {
+                if (_selectedQuantity != value) {
                     _selectedQuantity = value;
                     OnPropertyChanged(nameof(SelectedQuantity));
                 }
@@ -49,7 +49,7 @@ namespace LASERIS.ViewModels
         public string? SearchQueryInput {
             get => _searchQueryInput;
             set {
-                if(_searchQueryInput != value) {
+                if (_searchQueryInput != value) {
                     _searchQueryInput = value;
                     OnPropertyChanged(nameof(SearchQueryInput));
                 }
@@ -57,47 +57,33 @@ namespace LASERIS.ViewModels
         }
 
         private async Task OnQuerySubmit(object sender, RoutedEventArgs e) {
-            if(SelectedAttribute != null) {
-                List<Entry> returnedEntries = await _httpClient.GetFromJsonAsync<List<Entry>>(_baseApiUrl + "");
-                AddEntries(returnedEntries);
-            }
-            if(SelectedDate != null) {
-                List<Entry> returnedEntries = await _httpClient.GetFromJsonAsync<List<Entry>>(_baseApiUrl + "");
-                AddEntries(returnedEntries);
-            }
-            if(SelectedQuantity != null) {
-                List<Entry> returnedEntries = new List<Entry>();
+            allReturnedEntries.Clear();
+            var queryString = $"{_baseApiUrl}?";
 
-                if(SelectedQuantity == "Zero") {returnedEntries = await _httpClient.GetFromJsonAsync<List<Entry>>(_baseApiUrl + "");}
-                else if(SelectedQuantity == "One") {returnedEntries = await _httpClient.GetFromJsonAsync<List<Entry>>(_baseApiUrl + "");}
-                else if(SelectedQuantity == "More than one") {
-                    // Query for all, then filter out entries with 0 or 1. Add directly to allReturnedEntries.
-                    returnedEntries = await _httpClient.GetFromJsonAsync<List<Entry>>(_baseApiUrl + "");
-                    foreach(Entry entry in returnedEntries) {
-                        if(!(entry.quantity == 0 || entry.quantity == 1)) {
-                            allReturnedEntries.Add(entry);
-                        }
-                    }
-                    return;
+            if (SelectedAttribute != null) {
+                queryString += $"attribute={SelectedAttribute}&";
+            }
+            if (SelectedDate != null) {
+                queryString += $"signedOutDate={SelectedDate.Value.Date:yyyy-MM-dd}&";
+            }
+            if (SelectedQuantity != null) {
+                if (SelectedQuantity == "Zero") {
+                    queryString += "quantity=Zero&";
                 }
-
-                AddEntries(returnedEntries);
-            }
-            
-            foreach(Entry entry in allReturnedEntries) {
-                if((entry.signedOutDate.Equals(SelectedDate.Value.Date))) {
-
+                else if (SelectedQuantity == "One") {
+                    queryString += "quantity=One&";
+                }
+                else if (SelectedQuantity == "More than one") {
+                    queryString += "quantity=gt1&";
+                }
+                else {
+                    queryString += $"quantity={SelectedQuantity}&";
                 }
             }
-        }
-        
 
-        private void AddEntries(List<Entry> returnedEntries) {
-            if(returnedEntries != null) {
-                foreach(Entry entry in returnedEntries) {
-                    allReturnedEntries.Add(i);
-                }
-            }
+            queryString = queryString.TrimEnd('&', '?');
+
+            allReturnedEntries = await _httpClient.GetFromJsonAsync<List<Entry>>(queryString);
         }
     }
 }
