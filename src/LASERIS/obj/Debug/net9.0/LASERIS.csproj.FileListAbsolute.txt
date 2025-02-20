@@ -102,17 +102,13 @@ C:/Users/peter/Documents/UOL/COMP122/UOL-COMP122-Assignment-2/LASERIs/src/LASERI
 /home/pa1yn/Documents/GitHub/LASERIs/src/LASERIS/bin/Debug/net9.0/Avalonia.Themes.Simple.dll
 /home/pa1yn/Documents/GitHub/LASERIs/src/LASERIS/bin/Debug/net9.0/Avalonia.Win32.dll
 /home/pa1yn/Documents/GitHub/LASERIs/src/LASERIS/bin/Debug/net9.0/Avalonia.X11.dll
-/home/pa1yn/Documents/GitHub/LASERIs/src/LASERIS/bin/Debug/net9.0/DynamicData.dll
 /home/pa1yn/Documents/GitHub/LASERIs/src/LASERIS/bin/Debug/net9.0/HarfBuzzSharp.dll
 /home/pa1yn/Documents/GitHub/LASERIs/src/LASERIS/bin/Debug/net9.0/Material.Avalonia.dll
 /home/pa1yn/Documents/GitHub/LASERIs/src/LASERIS/bin/Debug/net9.0/Material.Colors.dll
 /home/pa1yn/Documents/GitHub/LASERIs/src/LASERIS/bin/Debug/net9.0/Material.Ripple.dll
 /home/pa1yn/Documents/GitHub/LASERIs/src/LASERIS/bin/Debug/net9.0/Material.Styles.dll
 /home/pa1yn/Documents/GitHub/LASERIs/src/LASERIS/bin/Debug/net9.0/MicroCom.Runtime.dll
-/home/pa1yn/Documents/GitHub/LASERIs/src/LASERIS/bin/Debug/net9.0/ReactiveUI.dll
 /home/pa1yn/Documents/GitHub/LASERIs/src/LASERIS/bin/Debug/net9.0/SkiaSharp.dll
-/home/pa1yn/Documents/GitHub/LASERIs/src/LASERIS/bin/Debug/net9.0/Splat.dll
-/home/pa1yn/Documents/GitHub/LASERIs/src/LASERIS/bin/Debug/net9.0/System.Reactive.dll
 /home/pa1yn/Documents/GitHub/LASERIs/src/LASERIS/bin/Debug/net9.0/Tmds.DBus.Protocol.dll
 /home/pa1yn/Documents/GitHub/LASERIs/src/LASERIS/bin/Debug/net9.0/runtimes/win-arm64/native/av_libglesv2.dll
 /home/pa1yn/Documents/GitHub/LASERIs/src/LASERIS/bin/Debug/net9.0/runtimes/win-x64/native/av_libglesv2.dll

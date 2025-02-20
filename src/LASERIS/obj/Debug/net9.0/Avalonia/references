@@ -22,7 +22,6 @@
 /home/pa1yn/.nuget/packages/avalonia/11.2.1/ref/net8.0/Avalonia.Vulkan.dll
 /home/pa1yn/.nuget/packages/avalonia.win32/11.2.1/lib/net8.0/Avalonia.Win32.dll
 /home/pa1yn/.nuget/packages/avalonia.x11/11.2.1/lib/net8.0/Avalonia.X11.dll
-/home/pa1yn/.nuget/packages/dynamicdata/9.0.4/lib/net8.0/DynamicData.dll
 /home/pa1yn/.nuget/packages/harfbuzzsharp/7.3.0.2/lib/net6.0/HarfBuzzSharp.dll
 /home/pa1yn/.nuget/packages/material.avalonia/3.9.1/lib/net8.0/Material.Avalonia.dll
 /home/pa1yn/.nuget/packages/material.avalonia/3.9.1/lib/net8.0/Material.Colors.dll
@@ -36,9 +35,7 @@
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.1/ref/net9.0/Microsoft.Win32.Registry.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.1/ref/net9.0/mscorlib.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.1/ref/net9.0/netstandard.dll
-/home/pa1yn/.nuget/packages/reactiveui/20.1.63/lib/net8.0/ReactiveUI.dll
 /home/pa1yn/.nuget/packages/skiasharp/2.88.8/lib/net6.0/SkiaSharp.dll
-/home/pa1yn/.nuget/packages/splat/15.1.1/lib/net8.0/Splat.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.1/ref/net9.0/System.AppContext.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.1/ref/net9.0/System.Buffers.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.1/ref/net9.0/System.Collections.Concurrent.dll
@@ -120,7 +117,6 @@
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.1/ref/net9.0/System.Numerics.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.1/ref/net9.0/System.Numerics.Vectors.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.1/ref/net9.0/System.ObjectModel.dll
-/home/pa1yn/.nuget/packages/system.reactive/6.0.1/lib/net6.0/System.Reactive.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.1/ref/net9.0/System.Reflection.DispatchProxy.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.1/ref/net9.0/System.Reflection.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.1/ref/net9.0/System.Reflection.Emit.dll

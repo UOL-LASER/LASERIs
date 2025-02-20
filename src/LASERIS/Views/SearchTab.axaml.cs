@@ -1,5 +1,6 @@
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
+using LASERIS.ViewModels;
 
 namespace LASERIS.Views
 {
@@ -8,6 +9,7 @@ namespace LASERIS.Views
         public SearchTab()
         {
             InitializeComponent();
+            DataContext = new SearchTabViewModel();  
         }
 
         private void InitializeComponent()
