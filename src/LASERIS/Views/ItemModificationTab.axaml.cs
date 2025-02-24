@@ -1,4 +1,5 @@
 using Avalonia.Controls;
+using LASERIS.ViewModels;
 using Avalonia.Markup.Xaml;
 
 namespace LASERIS.Views
@@ -8,6 +9,8 @@ namespace LASERIS.Views
         public ItemModificationTab()
         {
             InitializeComponent();
+            DataContext = new ItemModificationTabViewModel(); 
+
         }
 
         private void InitializeComponent()

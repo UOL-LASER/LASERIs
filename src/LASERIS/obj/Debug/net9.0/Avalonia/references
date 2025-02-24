@@ -24,10 +24,11 @@
 /home/pa1yn/.nuget/packages/avalonia.x11/11.2.1/lib/net8.0/Avalonia.X11.dll
 /home/pa1yn/.nuget/packages/communitytoolkit.mvvm/8.4.0/lib/net8.0/CommunityToolkit.Mvvm.dll
 /home/pa1yn/.nuget/packages/harfbuzzsharp/7.3.0.2/lib/net6.0/HarfBuzzSharp.dll
-/home/pa1yn/.nuget/packages/material.avalonia/3.9.1/lib/net8.0/Material.Avalonia.dll
-/home/pa1yn/.nuget/packages/material.avalonia/3.9.1/lib/net8.0/Material.Colors.dll
-/home/pa1yn/.nuget/packages/material.avalonia/3.9.1/lib/net8.0/Material.Ripple.dll
-/home/pa1yn/.nuget/packages/material.avalonia/3.9.1/lib/net8.0/Material.Styles.dll
+/home/pa1yn/.nuget/packages/material.avalonia.datagrid/3.9.2/lib/net8.0/Material.Avalonia.DataGrid.dll
+/home/pa1yn/.nuget/packages/material.avalonia/3.9.2/lib/net8.0/Material.Avalonia.dll
+/home/pa1yn/.nuget/packages/material.avalonia/3.9.2/lib/net8.0/Material.Colors.dll
+/home/pa1yn/.nuget/packages/material.avalonia/3.9.2/lib/net8.0/Material.Ripple.dll
+/home/pa1yn/.nuget/packages/material.avalonia/3.9.2/lib/net8.0/Material.Styles.dll
 /home/pa1yn/.nuget/packages/microcom.runtime/0.11.0/lib/net5.0/MicroCom.Runtime.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.1/ref/net9.0/Microsoft.CSharp.dll
 /usr/share/dotnet/packs/Microsoft.NETCore.App.Ref/9.0.1/ref/net9.0/Microsoft.VisualBasic.Core.dll

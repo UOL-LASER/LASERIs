@@ -45,11 +45,13 @@
                     </WrapPanel> 
                 </StackPanel>
             </SplitView.Pane>
-            <ScrollViewer>
-                <StackPanel>
-
-                </StackPanel>
-            </ScrollViewer>
+                <DataGrid Name="EntryDataGrid" Margin="20" ItemsSource="{Binding ReturnedEntries}" 
+                    AutoGenerateColumns="True" IsReadOnly="False"
+                    CanUserResizeColumns="True" 
+                    GridLinesVisibility="All"
+                    RowEditEnded="OnRowEditEnded"
+                    BorderThickness="1" BorderBrush="Gray">
+                </DataGrid>
         </SplitView>
     </DockPanel>
 </UserControl>

@@ -1,18 +1,21 @@
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows.Input;
+using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
 using Avalonia.Interactivity;
-using LASERISAPI.Models;
+using LASERIS.Models;
 using CommunityToolkit.Mvvm;
 using CommunityToolkit.Mvvm.Input;
 namespace LASERIS.ViewModels
 {
     public class SearchTabViewModel : BaseViewModel
     {
-        private List<Entry> allReturnedEntries = new List<Entry>();
+        private List<Entry> AllReturnedEntries = new List<Entry>();
+        public ObservableCollection<Entry> ReturnedEntries { get;}
         public ICommand QuerySubmitCommand { get; }
         
         private string? _selectedAttribute;
@@ -63,12 +66,17 @@ namespace LASERIS.ViewModels
         public SearchTabViewModel()
         {
             QuerySubmitCommand = new AsyncRelayCommand(OnQuerySubmit);
+            ReturnedEntries = new ObservableCollection<Entry>();
+            
+            _baseApiUrl = "http://localhost:5113/";
+
         }
 
 
         private async Task OnQuerySubmit() {
-            allReturnedEntries.Clear();
-            var queryString = $"{_baseApiUrl}?";
+            ReturnedEntries.Clear();
+            AllReturnedEntries.Clear();
+            var queryString = $"{_baseApiUrl}entries?";
 
             if (SelectedAttribute != null) {
                 if (SelectedAttribute.Equals("ID")) {
@@ -107,16 +115,32 @@ namespace LASERIS.ViewModels
                     queryString += "quantity=One&";
                 }
                 else if (SelectedQuantity == "More than one") {
-                    queryString += "quantity=gt1&";
-                }
-                else {
-                    queryString += $"quantity={SelectedQuantity}&";
+                    queryString += "quantity>1&";
                 }
             }
 
             queryString = queryString.TrimEnd('&', '?');
 
-            allReturnedEntries = await _httpClient.GetFromJsonAsync<List<Entry>>(queryString);
+            AllReturnedEntries = await _httpClient.GetFromJsonAsync<List<Entry>>(queryString);
+            foreach (Entry entry in AllReturnedEntries) {
+                ReturnedEntries.Add(entry);
+            }
+        }
+
+        public async Task UpdateEntryAsync(Entry item) {
+            try {
+                HttpResponseMessage response = await _httpClient.PutAsJsonAsync($"{_baseApiUrl}entry/{item.id}", item);
+
+                if (response.IsSuccessStatusCode) {
+                    System.Console.WriteLine("Update successful");
+                }
+                else {
+                    System.Console.WriteLine($"Update failed: {response.StatusCode}");
+                }
+            }
+            catch (Exception ex) {
+                System.Console.WriteLine($"Error updating entry: {ex.Message}");
+            }
         }
     }
 }

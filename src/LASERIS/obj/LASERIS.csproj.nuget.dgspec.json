@@ -70,7 +70,11 @@
             },
             "Material.Avalonia": {
               "target": "Package",
-              "version": "[3.9.1, )"
+              "version": "[3.9.2, )"
+            },
+            "Material.Avalonia.DataGrid": {
+              "target": "Package",
+              "version": "[3.9.2, )"
             }
           },
           "imports": [

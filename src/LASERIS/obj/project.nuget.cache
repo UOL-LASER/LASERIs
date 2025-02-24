@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "A4Pp8ie+/WQ=",
+  "dgSpecHash": "ewJH+aqi17M=",
   "success": true,
   "projectFilePath": "/home/pa1yn/Documents/GitHub/LASERIs/src/LASERIS/LASERIS.csproj",
   "expectedPackageFiles": [
@@ -26,7 +26,8 @@
     "/home/pa1yn/.nuget/packages/harfbuzzsharp.nativeassets.macos/7.3.0.2/harfbuzzsharp.nativeassets.macos.7.3.0.2.nupkg.sha512",
     "/home/pa1yn/.nuget/packages/harfbuzzsharp.nativeassets.webassembly/7.3.0.3-preview.2.2/harfbuzzsharp.nativeassets.webassembly.7.3.0.3-preview.2.2.nupkg.sha512",
     "/home/pa1yn/.nuget/packages/harfbuzzsharp.nativeassets.win32/7.3.0.2/harfbuzzsharp.nativeassets.win32.7.3.0.2.nupkg.sha512",
-    "/home/pa1yn/.nuget/packages/material.avalonia/3.9.1/material.avalonia.3.9.1.nupkg.sha512",
+    "/home/pa1yn/.nuget/packages/material.avalonia/3.9.2/material.avalonia.3.9.2.nupkg.sha512",
+    "/home/pa1yn/.nuget/packages/material.avalonia.datagrid/3.9.2/material.avalonia.datagrid.3.9.2.nupkg.sha512",
     "/home/pa1yn/.nuget/packages/microcom.runtime/0.11.0/microcom.runtime.0.11.0.nupkg.sha512",
     "/home/pa1yn/.nuget/packages/skiasharp/2.88.8/skiasharp.2.88.8.nupkg.sha512",
     "/home/pa1yn/.nuget/packages/skiasharp.nativeassets.linux/2.88.8/skiasharp.nativeassets.linux.2.88.8.nupkg.sha512",

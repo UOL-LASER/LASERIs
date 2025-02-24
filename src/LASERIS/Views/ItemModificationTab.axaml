@@ -1,53 +1,63 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             x:Class="LASERIS.Views.ItemModificationTab">
+             xmlns:vm="clr-namespace:LASERIS.ViewModels"
+             x:Class="LASERIS.Views.ItemModificationTab"
+             x:DataType="vm:ItemModificationTabViewModel">
     <DockPanel>
-        <SplitView IsPaneOpen="True" DisplayMode="Inline" OpenPaneLength="300">
-            <SplitView.Pane>
-                <StackPanel Margin="50" Spacing="10">
-                <WrapPanel Margin="17.5" Width="300">
-                    <TextBlock Text="Name:" />
-                    <TextBox x:Name="NameInput" Width="300" />
-                </WrapPanel>
+        <StackPanel Margin="20" Spacing="5">
+            <WrapPanel Margin="5" Width="300">
+                <TextBlock Text="Name:" />
+                <TextBox x:Name="NameInput" Text="{Binding Name}" Width="300" />
+            </WrapPanel>
 
-                <WrapPanel Margin="17.5" Width="300">
-                    <TextBlock Text="Manufacturer:" />
-                    <TextBox x:Name="MNameInput" Width="300" />
-                </WrapPanel>
+            <WrapPanel Margin="5" Width="300">
+                <TextBlock Text="Manufacturer:" />
+                <TextBox x:Name="MNameInput" Text="{Binding Manufacturer}" Width="300" />
+            </WrapPanel>
 
-                <WrapPanel Margin="17.5" Width="300">
-                    <TextBlock Text="Description:" />
-                    <TextBox x:Name="DescriptionInput" Width="300" Height="50" />
-                </WrapPanel>
+            <WrapPanel Margin="5" Width="300">
+                <TextBlock Text="Description:" />
+                <TextBox x:Name="DescriptionInput" Text="{Binding Description}" Width="300"/>
+            </WrapPanel>
 
-                <WrapPanel Margin="17.5" Width="300">
-                    <TextBlock Text="Serial Number:" />
-                    <TextBox x:Name="SerialNoInput" Width="300" />
-                </WrapPanel>
+            <WrapPanel Margin="5" Width="300">
+                <TextBlock Text="Serial Number:" />
+                <TextBox x:Name="SerialNoInput" Text="{Binding SerialNumber}" Width="300" />
+            </WrapPanel>
 
-                <WrapPanel Margin="17.5" Width="300">
-                    <TextBlock Text="Order Code:" />
-                    <TextBox x:Name="OrderNoInput" Width="300" />
-                </WrapPanel>
+            <WrapPanel Margin="5" Width="300">
+                <TextBlock Text="Order Code:" />
+                <TextBox x:Name="OrderCodeInput" Text="{Binding OrderCode}" Width="300" />
+            </WrapPanel>
 
-                <WrapPanel Margin="17.5" Width="300">
-                    <TextBlock Text="Item type:" />
-                    <ComboBox x:Name="ITypeInput" Width="300">
-                        <ComboBox.Items>
-                            <ComboBoxItem Content="Component" />
-                            <ComboBoxItem Content="MCU" />
-                            <ComboBoxItem Content="Other" />
-                        </ComboBox.Items>
-                    </ComboBox>
-                </WrapPanel>
-                <WrapPanel Margin="17.5" Width="300">
-                    <Button Content="Enter" Width="100" HorizontalAlignment="Left" />
-                </WrapPanel>
-                </StackPanel>
-            </SplitView.Pane>
-            <Grid>
-                <TextBlock Text="No matching entries found" FontSize="24" VerticalAlignment="Center" HorizontalAlignment="Center"/>
-            </Grid>
-        </SplitView>
+            <WrapPanel Margin="5" Width="300">
+                <TextBlock Text="Item type:" />
+                <ComboBox x:Name="ItemTypeInput" ItemsSource="{Binding ItemTypes}" SelectedItem="{Binding ItemType}" Width="300"/>
+            </WrapPanel>
+            
+            <WrapPanel Margin="5" Width="300">
+                <TextBlock Text="Quantity:" />
+                <TextBox x:Name="QuantityInput" Text="{Binding Quantity}" Width="300" />
+            </WrapPanel>
+
+            <WrapPanel Margin="5" Width="300">
+                <TextBlock Text="Signed Out To:" />
+                <TextBox x:Name="SignedOutToInput" Text="{Binding SignedOutTo}" Width="300" />
+            </WrapPanel>
+
+            <WrapPanel Margin="5" Width="300">
+                <TextBlock Text="Signed Out To ID:" />
+                <TextBox x:Name="SignedOutToIDInput" Text="{Binding SignedOutToId}" Width="300" />
+            </WrapPanel>
+
+            <WrapPanel Margin="5" Width="300">
+                <TextBlock Text="Date Signed Out: " />
+                <DatePicker x:Name="DateSignedOutInput" SelectedDate="{Binding DateSignedOut}" Width="200"/>
+            </WrapPanel>
+
+            <WrapPanel Margin="5" Width="300">
+                <Button Content="Add" Command="{Binding AddItemCommand}" Width="100" HorizontalAlignment="Left" />
+            </WrapPanel>
+        </StackPanel>
     </DockPanel>
 </UserControl>

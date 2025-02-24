@@ -16,7 +16,11 @@ namespace LASERIS.ViewModels
 
 
         public BaseViewModel() {
-            _httpClient = new HttpClient();
+            HttpClientHandler handler = new HttpClientHandler
+            {
+                ServerCertificateCustomValidationCallback = (message, cert, chain, errors) => true
+            };
+             _httpClient = new HttpClient(handler);
         }
     }
 }

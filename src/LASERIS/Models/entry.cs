@@ -1,5 +1,5 @@
 using System;
-namespace LASERISAPI.Models 
+namespace LASERIS.Models 
 {
     public class Entry
     {

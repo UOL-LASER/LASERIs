@@ -1,11 +1,13 @@
 <Application xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:themes="clr-namespace:Material.Styles.Themes;assembly=Material.Styles"
+             xmlns:dataGrid="clr-namespace:Material.Avalonia.DataGrid;assembly=Material.Avalonia.DataGrid"
              x:Class="LASERIS.App"
              RequestedThemeVariant="Default">
 
     <Application.Styles>
         <!-- Apply Material Design theme with custom colors -->
         <themes:MaterialTheme PrimaryColor="DeepPurple" SecondaryColor="DeepPurple" />
+        <dataGrid:MaterialDataGridStyles/>
     </Application.Styles>
 </Application>
