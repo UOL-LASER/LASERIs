@@ -115,7 +115,7 @@ namespace LASERIS.ViewModels
                     queryString += "quantity=One&";
                 }
                 else if (SelectedQuantity == "More than one") {
-                    queryString += "quantity>1&";
+                    queryString += $"quantity={Uri.EscapeDataString(">1")}&";
                 }
             }
 
