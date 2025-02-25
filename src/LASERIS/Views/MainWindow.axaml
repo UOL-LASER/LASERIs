@@ -10,10 +10,10 @@
     <DockPanel>
         <StackPanel>
             <TabControl Margin="10">
-                <TabItem Header="Search">
+                <TabItem Header="Entry Search/Update">
                     <local:SearchTab />
                 </TabItem>
-                <TabItem Header="Item Entry/Update">
+                <TabItem Header="Entry Add/Remove">
                     <local:ItemModificationTab />
                 </TabItem>
             </TabControl>

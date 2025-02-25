@@ -4,60 +4,82 @@
              x:Class="LASERIS.Views.ItemModificationTab"
              x:DataType="vm:ItemModificationTabViewModel">
     <DockPanel>
-        <StackPanel Margin="20" Spacing="5">
-            <WrapPanel Margin="5" Width="300">
-                <TextBlock Text="Name:" />
-                <TextBox x:Name="NameInput" Text="{Binding Name}" Width="300" />
-            </WrapPanel>
+            <Grid Width="600" Margin="50">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
 
-            <WrapPanel Margin="5" Width="300">
-                <TextBlock Text="Manufacturer:" />
-                <TextBox x:Name="MNameInput" Text="{Binding Manufacturer}" Width="300" />
-            </WrapPanel>
+                <TextBlock Text="Name:" Grid.Row="0" Grid.Column="0" />
+                <TextBox x:Name="NameInput" Text="{Binding Name}" Width="300" Grid.Row="0" Grid.Column="1" />
 
-            <WrapPanel Margin="5" Width="300">
-                <TextBlock Text="Description:" />
-                <TextBox x:Name="DescriptionInput" Text="{Binding Description}" Width="300"/>
-            </WrapPanel>
+                <TextBlock Text="Manufacturer:" Grid.Row="1" Grid.Column="0" />
+                <TextBox x:Name="MNameInput" Text="{Binding Manufacturer}" Width="300" Grid.Row="1" Grid.Column="1" />
 
-            <WrapPanel Margin="5" Width="300">
-                <TextBlock Text="Serial Number:" />
-                <TextBox x:Name="SerialNoInput" Text="{Binding SerialNumber}" Width="300" />
-            </WrapPanel>
+                <TextBlock Text="Product Description:" Grid.Row="2" Grid.Column="0" />
+                <TextBox x:Name="ProductDescriptionInput" Text="{Binding ProductDescription}" Width="300" Grid.Row="2" Grid.Column="1" />
 
-            <WrapPanel Margin="5" Width="300">
-                <TextBlock Text="Order Code:" />
-                <TextBox x:Name="OrderCodeInput" Text="{Binding OrderCode}" Width="300" />
-            </WrapPanel>
+                <TextBlock Text="Physical Description:" Grid.Row="3" Grid.Column="0" />
+                <TextBox x:Name="PhysicalDescriptionInput" Text="{Binding PhysicalDescription}" Width="300" Grid.Row="3" Grid.Column="1" />
 
-            <WrapPanel Margin="5" Width="300">
-                <TextBlock Text="Item type:" />
-                <ComboBox x:Name="ItemTypeInput" ItemsSource="{Binding ItemTypes}" SelectedItem="{Binding ItemType}" Width="300"/>
-            </WrapPanel>
-            
-            <WrapPanel Margin="5" Width="300">
-                <TextBlock Text="Quantity:" />
-                <TextBox x:Name="QuantityInput" Text="{Binding Quantity}" Width="300" />
-            </WrapPanel>
+                <TextBlock Text="Product Link:" Grid.Row="4" Grid.Column="0" />
+                <TextBox x:Name="ProductLinkInput" Text="{Binding ProductLink}" Width="300" Grid.Row="4" Grid.Column="1" />
 
-            <WrapPanel Margin="5" Width="300">
-                <TextBlock Text="Signed Out To:" />
-                <TextBox x:Name="SignedOutToInput" Text="{Binding SignedOutTo}" Width="300" />
-            </WrapPanel>
+                <TextBlock Text="Serial Number:" Grid.Row="5" Grid.Column="0" />
+                <TextBox x:Name="SerialNoInput" Text="{Binding SerialNumber}" Width="300" Grid.Row="5" Grid.Column="1" />
 
-            <WrapPanel Margin="5" Width="300">
-                <TextBlock Text="Signed Out To ID:" />
-                <TextBox x:Name="SignedOutToIDInput" Text="{Binding SignedOutToId}" Width="300" />
-            </WrapPanel>
+                <TextBlock Text="Order Code:" Grid.Row="6" Grid.Column="0" />
+                <TextBox x:Name="OrderCodeInput" Text="{Binding OrderCode}" Width="300" Grid.Row="6" Grid.Column="1" />
 
-            <WrapPanel Margin="5" Width="300">
-                <TextBlock Text="Date Signed Out: " />
-                <DatePicker x:Name="DateSignedOutInput" SelectedDate="{Binding DateSignedOut}" Width="200"/>
-            </WrapPanel>
+                <TextBlock Text="Item type:" Grid.Row="7" Grid.Column="0" />
+                <ComboBox x:Name="ItemTypeInput" ItemsSource="{Binding ItemTypes}" SelectedItem="{Binding ItemType}" Width="300" Grid.Row="7" Grid.Column="1" />
 
-            <WrapPanel Margin="5" Width="300">
-                <Button Content="Add" Command="{Binding AddItemCommand}" Width="100" HorizontalAlignment="Left" />
-            </WrapPanel>
-        </StackPanel>
+                <TextBlock Text="Quantity:" Grid.Row="8" Grid.Column="0" />
+                <TextBox x:Name="QuantityInput" Text="{Binding Quantity}" Width="300" Grid.Row="8" Grid.Column="1" />
+
+                <TextBlock Text="Signed Out To:" Grid.Row="9" Grid.Column="0" />
+                <TextBox x:Name="SignedOutToInput" Text="{Binding SignedOutTo}" Width="300" Grid.Row="9" Grid.Column="1" />
+
+                <TextBlock Text="Signed Out To ID:" Grid.Row="10" Grid.Column="0" />
+                <TextBox x:Name="SignedOutToIDInput" Text="{Binding SignedOutToId}" Width="300" Grid.Row="10" Grid.Column="1" />
+
+                <TextBlock Margin="0 20 0 0" Text="Date Signed Out:" Grid.Row="11" Grid.Column="0" />
+                <StackPanel Margin="20" Grid.Row="11" Grid.Column="1" Width="300">
+                    <DatePicker DayFormat="ddd dd" x:Name="DateSignedOutInput" SelectedDate="{Binding DateSignedOut}"/>
+                </StackPanel>
+
+                <Button Content="Add" Command="{Binding AddItemCommand}" Width="100" HorizontalAlignment="Left" Grid.Row="12" Grid.Column="0" />
+            </Grid>
+            <Grid Width="600" Margin="50">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="ID:" Grid.Row="0" Grid.Column="0" />
+                <TextBox x:Name="IDInput" Text="{Binding Id}" Width="300" Grid.Row="0" Grid.Column="1" />
+
+                <Button Content="Remove" Command="{Binding RemoveItemCommand}" Width="100" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="0" />
+            </Grid>
     </DockPanel>
 </UserControl>

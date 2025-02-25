@@ -15,6 +15,8 @@ namespace LASERIS.ViewModels
         private readonly HttpClient _httpClient;
         private readonly string _baseApiUrl;
         public ICommand AddItemCommand { get; }
+        public ICommand RemoveItemCommand { get; }
+
 
 
         private string _name;
@@ -39,13 +41,35 @@ namespace LASERIS.ViewModels
             }
         }
 
-        private string? _description;
-        public string? Description {
-            get => _description;
+        private string? _productDescription;
+        public string? ProductDescription {
+            get => _productDescription;
             set {
-                if (_description != value) {
-                    _description = value;
-                    OnPropertyChanged(nameof(Description));
+                if (_productDescription != value) {
+                    _productDescription = value;
+                    OnPropertyChanged(nameof(ProductDescription));
+                }
+            }
+        }
+
+        private string? _physicalDescription;
+        public string? PhysicalDescription {
+            get => _physicalDescription;
+            set {
+                if (_physicalDescription != value) {
+                    _physicalDescription = value;
+                    OnPropertyChanged(nameof(PhysicalDescription));
+                }
+            }
+        }
+
+        private string? _productLink;
+        public string? ProductLink {
+            get => _productLink;
+            set {
+                if (_productLink != value) {
+                    _productLink = value;
+                    OnPropertyChanged(nameof(ProductLink));
                 }
             }
         }
@@ -129,12 +153,24 @@ namespace LASERIS.ViewModels
             }
         }
 
+        private int? _id;
+        public int? Id {
+            get => _id;
+            set {
+                if (_id != value) {
+                    _id = value;
+                    OnPropertyChanged(nameof(Id));
+                }
+            }
+        }
+
         public ItemModificationTabViewModel()
         {
             _httpClient = new HttpClient();
             _baseApiUrl = "http://localhost:5113/";
 
             AddItemCommand = new AsyncRelayCommand(OnAddItem);
+            RemoveItemCommand = new AsyncRelayCommand(OnRemoveItem);
         }
 
         private async Task OnAddItem()
@@ -143,7 +179,9 @@ namespace LASERIS.ViewModels
             {
                 name = Name,
                 manufacturerName = Manufacturer,
-                description = Description,
+                productDescription = ProductDescription,
+                physicalDescription = PhysicalDescription,
+                productLink = ProductLink,
                 serialNumber = SerialNumber,
                 orderCode = OrderCode,
                 itemType = ItemType,
@@ -170,6 +208,28 @@ namespace LASERIS.ViewModels
             {
                 System.Console.WriteLine($"Error adding item: {ex.Message}");
             }
+        }
+
+        private async Task OnRemoveItem()
+        {
+            try
+            {
+                HttpResponseMessage response = await _httpClient.DeleteAsync($"{_baseApiUrl}entry/{Id}");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    System.Console.WriteLine("Item successfully deleted");
+                }
+                else
+                {
+                    System.Console.WriteLine($"Failed to delete item: {response.StatusCode}");
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Console.WriteLine($"Error deleting item: {ex.Message}");
+            }
+            
         }
     }
 }

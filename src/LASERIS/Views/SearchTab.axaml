@@ -28,7 +28,7 @@
                     </WrapPanel>
                     <WrapPanel Margin="17.5" Width="300">
                         <TextBlock Text="Quantity: " />
-                        <ComboBox x:Name="QuantitySelectionInput" SelectedItem="{Binding SelectedQuantity}" PlaceholderText="Quantity" Width="200">
+                        <ComboBox x:Name="QuantitySelectionInput" SelectedItem="{Binding SelectedQuantity}" Width="200">
                             <ComboBox.Items>
                                 <ComboBoxItem Content="Zero" />
                                 <ComboBoxItem Content="One" />
@@ -46,11 +46,26 @@
                 </StackPanel>
             </SplitView.Pane>
                 <DataGrid Name="EntryDataGrid" Margin="20" ItemsSource="{Binding ReturnedEntries}" 
-                    AutoGenerateColumns="True" IsReadOnly="False"
+                    AutoGenerateColumns="False" IsReadOnly="False"
                     CanUserResizeColumns="True" 
                     GridLinesVisibility="All"
                     RowEditEnded="OnRowEditEnded"
                     BorderThickness="1" BorderBrush="Gray">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Id"  Binding="{Binding id}"/>
+                        <DataGridTextColumn Header="Name" Binding="{Binding name}" />
+                        <DataGridTextColumn Header="Manufacturer Name" Binding="{Binding manufacturerName}" />
+                        <DataGridTextColumn Header="Product Description" Binding="{Binding productDescription}" />
+                        <DataGridTextColumn Header="Physical Description" Binding="{Binding physicalDescription}" />
+                        <DataGridTextColumn Header="Product Link" Binding="{Binding productLink}" />
+                        <DataGridTextColumn Header="Serial Number" Binding="{Binding serialNumber}" />
+                        <DataGridTextColumn Header="Order Code" Binding="{Binding orderCode}" />
+                        <DataGridTextColumn Header="Item Type" Binding="{Binding itemType}" />
+                        <DataGridTextColumn Header="Quantity" Binding="{Binding quantity}" />
+                        <DataGridTextColumn Header="Signed Out To" Binding="{Binding signedOutTo}" />
+                        <DataGridTextColumn Header="Signed Out To Id" Binding="{Binding signedOutToId}" />
+                        <DataGridTextColumn Header="Signed Out Date" Binding="{Binding signedOutDate}" />
+                    </DataGrid.Columns>
                 </DataGrid>
         </SplitView>
     </DockPanel>
