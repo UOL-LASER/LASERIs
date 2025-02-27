@@ -9,18 +9,7 @@
                 <StackPanel Margin="50" Spacing="10">
                     <WrapPanel Margin="17.5" Width="300">
                         <TextBlock Text="Search via attribute:" />
-                        <ListBox x:Name="AttributeSelectionInput" SelectedItem="{Binding SelectedAttribute}" SelectionMode="Single, Toggle" Width="200">
-                            <ListBox.Items>
-                                <ListBoxItem Content="ID" />
-                                <ListBoxItem Content="Name" />
-                                <ListBoxItem Content="Manufacturer Name" />
-                                <ListBoxItem Content="Serial Number" />
-                                <ListBoxItem Content="Order Code" />
-                                <ListBoxItem Content="Item Type" />
-                                <ListBoxItem Content="Signed Out To" />
-                                <ListBoxItem Content="Signed Out To ID" />
-                            </ListBox.Items>
-                        </ListBox>
+                        <ListBox x:Name="AttributeSelectionInput" ItemsSource="{Binding SelectableAttributes}" SelectedItem="{Binding SelectedAttribute}" SelectionMode="Single, Toggle" Width="200"/>
                     </WrapPanel>
                     <WrapPanel Margin="17.5" Width="300">
                         <TextBlock Text="Date Signed Out: " />
@@ -50,7 +39,8 @@
                     CanUserResizeColumns="True" 
                     GridLinesVisibility="All"
                     RowEditEnded="OnRowEditEnded"
-                    BorderThickness="1" BorderBrush="Gray">
+                    BorderThickness="1" BorderBrush="Gray"
+                    MaxHeight="900">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Id"  Binding="{Binding id}"/>
                         <DataGridTextColumn Header="Name" Binding="{Binding name}" />

@@ -14,6 +14,7 @@ namespace LASERIS.ViewModels
     {
         private readonly HttpClient _httpClient;
         private readonly string _baseApiUrl;
+        public List<string> ItemTypes { get; }
         public ICommand AddItemCommand { get; }
         public ICommand RemoveItemCommand { get; }
 
@@ -106,7 +107,6 @@ namespace LASERIS.ViewModels
                 }
             }
         }
-        public List<string> ItemTypes { get; } = new() { "Component", "MCU", "Other" };
 
         private int _quantity;
         public int Quantity {
@@ -115,40 +115,6 @@ namespace LASERIS.ViewModels
                 if (_quantity != value) {
                     _quantity = value;
                     OnPropertyChanged(nameof(Quantity));
-                }
-            }
-        }
-
-        private string? _signedOutTo;
-        public string? SignedOutTo {
-            get => _signedOutTo;
-            set {
-                if (_signedOutTo != value) {
-                    _signedOutTo = value;
-                    OnPropertyChanged(nameof(SignedOutTo));
-                }
-            }
-        }
-
-
-        private int? _signedOutToId;
-        public int? SignedOutToId {
-            get => _signedOutToId;
-            set {
-                if (_signedOutToId != value) {
-                    _signedOutToId = value;
-                    OnPropertyChanged(nameof(SignedOutToId));
-                }
-            }
-        }
-
-        private DateTime? _dateSignedOut;
-        public DateTime? DateSignedOut {
-            get => _dateSignedOut;
-            set {
-                if (_dateSignedOut != value) {
-                    _dateSignedOut = value;
-                    OnPropertyChanged(nameof(DateSignedOut));
                 }
             }
         }
@@ -169,6 +135,8 @@ namespace LASERIS.ViewModels
             _httpClient = new HttpClient();
             _baseApiUrl = "http://localhost:5113/";
 
+            ItemTypes = new() { "Component", "MCU", "Other" };
+
             AddItemCommand = new AsyncRelayCommand(OnAddItem);
             RemoveItemCommand = new AsyncRelayCommand(OnRemoveItem);
         }
@@ -185,10 +153,7 @@ namespace LASERIS.ViewModels
                 serialNumber = SerialNumber,
                 orderCode = OrderCode,
                 itemType = ItemType,
-                quantity = Quantity,
-                signedOutTo = SignedOutTo,
-                signedOutToId = SignedOutToId,
-                signedOutDate = DateSignedOut,
+                quantity = Quantity
             };
 
             try

@@ -16,7 +16,9 @@ namespace LASERIS.ViewModels
     {
         private List<Entry> AllReturnedEntries = new List<Entry>();
         public ObservableCollection<Entry> ReturnedEntries { get;}
-        public ICommand QuerySubmitCommand { get; }
+
+        public List<string> SelectableAttributes {get;}
+        public ICommand QuerySubmitCommand { get; } 
         
         private string? _selectedAttribute;
         public string? SelectedAttribute {
@@ -70,6 +72,8 @@ namespace LASERIS.ViewModels
             
             _baseApiUrl = "http://localhost:5113/";
 
+            SelectableAttributes = new() { "ID", "Name", "Manufacturer Name", "Serial Number", "Order Code", "Item Type", "Signed Out To", "Signed Out To ID"};
+
         }
 
 
@@ -105,6 +109,7 @@ namespace LASERIS.ViewModels
                 }
             }
             if (SelectedDate != null) {
+                //System.Console.WriteLine(SelectedDate.Date.ToString("yyyy-MM-dd"));
                 queryString += $"signedOutDate={SelectedDate.Value.Date:yyyy-MM-dd}&";
             }
             if (SelectedQuantity != null) {

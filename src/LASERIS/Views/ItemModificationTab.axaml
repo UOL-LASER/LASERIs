@@ -53,17 +53,6 @@
                 <TextBlock Text="Quantity:" Grid.Row="8" Grid.Column="0" />
                 <TextBox x:Name="QuantityInput" Text="{Binding Quantity}" Width="300" Grid.Row="8" Grid.Column="1" />
 
-                <TextBlock Text="Signed Out To:" Grid.Row="9" Grid.Column="0" />
-                <TextBox x:Name="SignedOutToInput" Text="{Binding SignedOutTo}" Width="300" Grid.Row="9" Grid.Column="1" />
-
-                <TextBlock Text="Signed Out To ID:" Grid.Row="10" Grid.Column="0" />
-                <TextBox x:Name="SignedOutToIDInput" Text="{Binding SignedOutToId}" Width="300" Grid.Row="10" Grid.Column="1" />
-
-                <TextBlock Margin="0 20 0 0" Text="Date Signed Out:" Grid.Row="11" Grid.Column="0" />
-                <StackPanel Margin="20" Grid.Row="11" Grid.Column="1" Width="300">
-                    <DatePicker DayFormat="ddd dd" x:Name="DateSignedOutInput" SelectedDate="{Binding DateSignedOut}"/>
-                </StackPanel>
-
                 <Button Content="Add" Command="{Binding AddItemCommand}" Width="100" HorizontalAlignment="Left" Grid.Row="12" Grid.Column="0" />
             </Grid>
             <Grid Width="600" Margin="50">
