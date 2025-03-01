@@ -1,0 +1,23 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LASERIS.Views;assembly=LASERIS"
+        mc:Ignorable="d" d:DesignWidth="1920" d:DesignHeight="1080"
+        x:Class="LASERIS.Views.MainWindow"
+        Title="LASERIS"
+        ExtendClientAreaToDecorationsHint="True">
+    <DockPanel>
+        <StackPanel>
+            <Image Source="/Assets/logo-2.png" Width="60" Height="60" Margin="10"/>            
+            <TabControl Margin="10">
+                <TabItem Header="Entry Search/Update">
+                    <local:SearchTab />
+                </TabItem>
+                <TabItem Header="Entry Add/Remove">
+                    <local:ItemModificationTab />
+                </TabItem>
+            </TabControl>
+        </StackPanel>
+    </DockPanel>
+</Window>

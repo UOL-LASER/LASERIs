@@ -1,0 +1,57 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:LASERIS.ViewModels"
+             x:Class="LASERIS.Views.SearchTab"
+             x:DataType="vm:SearchTabViewModel">
+
+    <DockPanel>
+        <SplitView IsPaneOpen="True" DisplayMode="Inline" OpenPaneLength="300">
+            <SplitView.Pane>
+                <StackPanel Margin="50" Spacing="10">
+                    <WrapPanel Margin="17.5" Width="300">
+                        <TextBlock Text="Search via attribute:" />
+                        <ListBox x:Name="AttributeSelectionInput" ItemsSource="{Binding SelectableAttributes}" SelectedItem="{Binding SelectedAttribute}" SelectionMode="Single, Toggle" Width="200"/>
+                    </WrapPanel>
+                    <WrapPanel Margin="17.5" Width="300">
+                        <TextBlock Text="Date Signed Out: " />
+                        <TextBox x:Name="SelectedDateInput" Text="{Binding SelectedDate}" Width="200" />
+                    </WrapPanel>
+                    <WrapPanel Margin="17.5" Width="300">
+                        <TextBlock Text="Quantity: " />
+                        <ComboBox x:Name="QuantitySelectionInput" ItemsSource="{Binding SelectableQuantity}" SelectedItem="{Binding SelectedQuantity}" Width="200"/>
+                    </WrapPanel>
+                    <WrapPanel Margin="17.5" Width="300">
+                        <TextBlock Text="Search Query: " />
+                        <TextBox x:Name="SearchQueryInput" Text="{Binding SearchQueryInput}" Width="300" />
+                    </WrapPanel>
+                    <WrapPanel Margin="17.5" Width="300">
+                        <Button Command="{Binding QuerySubmitCommand}" Content="Submit" Width="100" HorizontalAlignment="Left" />
+                    </WrapPanel> 
+                </StackPanel>
+            </SplitView.Pane>
+                <DataGrid Name="EntryDataGrid" Margin="20" ItemsSource="{Binding ReturnedEntries}" 
+                    AutoGenerateColumns="False" IsReadOnly="False"
+                    CanUserResizeColumns="True" 
+                    GridLinesVisibility="All"
+                    RowEditEnded="OnRowEditEnded"
+                    BorderThickness="1" BorderBrush="Gray"
+                    MaxHeight="830">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Id"  Binding="{Binding id}"/>
+                        <DataGridTextColumn Header="Name" Binding="{Binding name}" />
+                        <DataGridTextColumn Header="Manufacturer Name" Binding="{Binding manufacturerName}" />
+                        <DataGridTextColumn Header="Product Description" Binding="{Binding productDescription}" />
+                        <DataGridTextColumn Header="Physical Description" Binding="{Binding physicalDescription}" />
+                        <DataGridTextColumn Header="Product Link" Binding="{Binding productLink}" />
+                        <DataGridTextColumn Header="Serial Number" Binding="{Binding serialNumber}" />
+                        <DataGridTextColumn Header="Order Code" Binding="{Binding orderCode}" />
+                        <DataGridTextColumn Header="Item Type" Binding="{Binding itemType}" />
+                        <DataGridTextColumn Header="Quantity" Binding="{Binding quantity}" />
+                        <DataGridTextColumn Header="Signed Out To" Binding="{Binding signedOutTo}" />
+                        <DataGridTextColumn Header="Signed Out To Id" Binding="{Binding signedOutToId}" />
+                        <DataGridTextColumn Header="Signed Out Date" Binding="{Binding signedOutDate}" />
+                    </DataGrid.Columns>
+                </DataGrid>
+        </SplitView>
+    </DockPanel>
+</UserControl>
