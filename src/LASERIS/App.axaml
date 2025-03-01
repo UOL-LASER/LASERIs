@@ -7,7 +7,7 @@
 
     <Application.Styles>
         <!-- Apply Material Design theme with custom colors -->
-        <themes:MaterialTheme PrimaryColor="DeepPurple" SecondaryColor="DeepPurple" />
+        <themes:MaterialTheme PrimaryColor="Blue" SecondaryColor="Blue" />
         <dataGrid:MaterialDataGridStyles/>
     </Application.Styles>
 </Application>

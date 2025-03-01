@@ -129,7 +129,13 @@ namespace LASERIS.ViewModels
 
             queryString = queryString.TrimEnd('&', '?');
 
-            AllReturnedEntries = await _httpClient.GetFromJsonAsync<List<Entry>>(queryString);
+            try {
+                AllReturnedEntries = await _httpClient.GetFromJsonAsync<List<Entry>>(queryString);
+            }
+            catch (Exception ex) {
+                System.Console.WriteLine($"Error contacting API: {ex.Message}");
+            }
+
             foreach (Entry entry in AllReturnedEntries) {
                 ReturnedEntries.Add(entry);
             }
