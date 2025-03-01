@@ -9,6 +9,7 @@
         ExtendClientAreaToDecorationsHint="True">
     <DockPanel>
         <StackPanel>
+            <Image Source="/Assets/logo-2.png" Width="60" Height="60" Margin="10"/>            
             <TabControl Margin="10">
                 <TabItem Header="Entry Search/Update">
                     <local:SearchTab />

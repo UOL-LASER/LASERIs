@@ -3,6 +3,7 @@
              xmlns:vm="clr-namespace:LASERIS.ViewModels"
              x:Class="LASERIS.Views.SearchTab"
              x:DataType="vm:SearchTabViewModel">
+
     <DockPanel>
         <SplitView IsPaneOpen="True" DisplayMode="Inline" OpenPaneLength="300">
             <SplitView.Pane>
@@ -13,17 +14,11 @@
                     </WrapPanel>
                     <WrapPanel Margin="17.5" Width="300">
                         <TextBlock Text="Date Signed Out: " />
-                        <DatePicker x:Name="DateSelectionInput" SelectedDate="{Binding SelectedDate}" Width="200"/>
+                        <TextBox x:Name="SelectedDateInput" Text="{Binding SelectedDate}" Width="200" />
                     </WrapPanel>
                     <WrapPanel Margin="17.5" Width="300">
                         <TextBlock Text="Quantity: " />
-                        <ComboBox x:Name="QuantitySelectionInput" SelectedItem="{Binding SelectedQuantity}" Width="200">
-                            <ComboBox.Items>
-                                <ComboBoxItem Content="Zero" />
-                                <ComboBoxItem Content="One" />
-                                <ComboBoxItem Content="More than one" />
-                            </ComboBox.Items>
-                        </ComboBox>
+                        <ComboBox x:Name="QuantitySelectionInput" ItemsSource="{Binding SelectableQuantity}" SelectedItem="{Binding SelectedQuantity}" Width="200"/>
                     </WrapPanel>
                     <WrapPanel Margin="17.5" Width="300">
                         <TextBlock Text="Search Query: " />
@@ -40,7 +35,7 @@
                     GridLinesVisibility="All"
                     RowEditEnded="OnRowEditEnded"
                     BorderThickness="1" BorderBrush="Gray"
-                    MaxHeight="900">
+                    MaxHeight="830">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Id"  Binding="{Binding id}"/>
                         <DataGridTextColumn Header="Name" Binding="{Binding name}" />

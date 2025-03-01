@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Globalization;
 using System.Windows.Input;
 using System.Net.Http;
 using System.Net.Http.Json;
@@ -18,6 +19,8 @@ namespace LASERIS.ViewModels
         public ObservableCollection<Entry> ReturnedEntries { get;}
 
         public List<string> SelectableAttributes {get;}
+        public List<string> SelectableQuantity {get;}
+
         public ICommand QuerySubmitCommand { get; } 
         
         private string? _selectedAttribute;
@@ -31,8 +34,8 @@ namespace LASERIS.ViewModels
             }
         }
 
-        private DateTime? _selectedDate;
-        public DateTime? SelectedDate {
+        private String? _selectedDate;
+        public String? SelectedDate {
             get => _selectedDate;
             set {
                 if (_selectedDate != value) {
@@ -73,6 +76,7 @@ namespace LASERIS.ViewModels
             _baseApiUrl = "http://localhost:5113/";
 
             SelectableAttributes = new() { "ID", "Name", "Manufacturer Name", "Serial Number", "Order Code", "Item Type", "Signed Out To", "Signed Out To ID"};
+            SelectableQuantity = new() {"Zero", "One", "More than one"};
 
         }
 
@@ -109,15 +113,14 @@ namespace LASERIS.ViewModels
                 }
             }
             if (SelectedDate != null) {
-                //System.Console.WriteLine(SelectedDate.Date.ToString("yyyy-MM-dd"));
-                queryString += $"signedOutDate={SelectedDate.Value.Date:yyyy-MM-dd}&";
+                queryString += $"signedOutDate={DateTime.ParseExact(SelectedDate, "dd-MM-yyyy", CultureInfo.InvariantCulture)}&";
             }
             if (SelectedQuantity != null) {
                 if (SelectedQuantity == "Zero") {
-                    queryString += "quantity=Zero&";
+                    queryString += "quantity=0&";
                 }
                 else if (SelectedQuantity == "One") {
-                    queryString += "quantity=One&";
+                    queryString += "quantity=1&";
                 }
                 else if (SelectedQuantity == "More than one") {
                     queryString += $"quantity={Uri.EscapeDataString(">1")}&";
