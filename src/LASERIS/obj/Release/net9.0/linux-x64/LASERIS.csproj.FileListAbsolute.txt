@@ -234,3 +234,6 @@
 /home/pa1yn/Documents/GitHub/LASERIs/src/LASERIS/obj/Release/net9.0/linux-x64/LASERIS.csproj.Up2Date
 /home/pa1yn/Documents/GitHub/LASERIs/src/LASERIS/obj/Release/net9.0/linux-x64/LASERIS.genruntimeconfig.cache
 /home/pa1yn/Documents/GitHub/LASERIs/src/LASERIS/obj/Release/net9.0/linux-x64/ref/LASERIS.dll
+/home/pa1yn/Documents/GitHub/LASERIs/src/LASERIS/obj/Release/net9.0/linux-x64/LASERIS.dll
+/home/pa1yn/Documents/GitHub/LASERIs/src/LASERIS/obj/Release/net9.0/linux-x64/refint/LASERIS.dll
+/home/pa1yn/Documents/GitHub/LASERIs/src/LASERIS/obj/Release/net9.0/linux-x64/LASERIS.pdb
