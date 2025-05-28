@@ -12,8 +12,6 @@ namespace LASERIS.ViewModels
 {
     public class ItemModificationTabViewModel : BaseViewModel
     {
-        private readonly HttpClient _httpClient;
-        private readonly string _baseApiUrl;
         public List<string> ItemTypes { get; }
         public ICommand AddItemCommand { get; }
         public ICommand RemoveItemCommand { get; }
