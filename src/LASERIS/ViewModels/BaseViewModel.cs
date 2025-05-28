@@ -21,8 +21,8 @@ namespace LASERIS.ViewModels
                 ServerCertificateCustomValidationCallback = (message, cert, chain, errors) => true
             };
             _httpClient = new HttpClient(handler);
-            
-            _baseApiUrl = Environment.GetEnvironmentVariable("LASERISAPI_URL") 
+
+            _baseApiUrl = Environment.GetEnvironmentVariable("LASERISAPI_URL"); 
         }
     }
 }

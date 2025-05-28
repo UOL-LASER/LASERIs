@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ewJH+aqi17M=",
+  "dgSpecHash": "NkvIokG2PUg=",
   "success": true,
   "projectFilePath": "/home/pa1yn/Documents/GitHub/LASERIs/src/LASERIS/LASERIS.csproj",
   "expectedPackageFiles": [
@@ -36,7 +36,10 @@
     "/home/pa1yn/.nuget/packages/skiasharp.nativeassets.win32/2.88.8/skiasharp.nativeassets.win32.2.88.8.nupkg.sha512",
     "/home/pa1yn/.nuget/packages/system.io.pipelines/8.0.0/system.io.pipelines.8.0.0.nupkg.sha512",
     "/home/pa1yn/.nuget/packages/tmds.dbus.protocol/0.20.0/tmds.dbus.protocol.0.20.0.nupkg.sha512",
-    "/home/pa1yn/.nuget/packages/microsoft.aspnetcore.app.ref/9.0.1/microsoft.aspnetcore.app.ref.9.0.1.nupkg.sha512"
+    "/home/pa1yn/.nuget/packages/microsoft.netcore.app.runtime.linux-x64/9.0.3/microsoft.netcore.app.runtime.linux-x64.9.0.3.nupkg.sha512",
+    "/home/pa1yn/.nuget/packages/microsoft.aspnetcore.app.ref/9.0.3/microsoft.aspnetcore.app.ref.9.0.3.nupkg.sha512",
+    "/home/pa1yn/.nuget/packages/microsoft.aspnetcore.app.runtime.linux-x64/9.0.3/microsoft.aspnetcore.app.runtime.linux-x64.9.0.3.nupkg.sha512",
+    "/home/pa1yn/.nuget/packages/microsoft.netcore.app.host.linux-x64/9.0.3/microsoft.netcore.app.host.linux-x64.9.0.3.nupkg.sha512"
   ],
   "logs": []
 }
