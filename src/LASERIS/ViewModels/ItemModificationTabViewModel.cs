@@ -133,8 +133,6 @@ namespace LASERIS.ViewModels
         public ItemModificationTabViewModel()
         {
             _httpClient = new HttpClient();
-            _baseApiUrl = "http://localhost:5113/";
-
             ItemTypes = new() { "Component", "MCU", "Other" };
 
             AddItemCommand = new AsyncRelayCommand(OnAddItem);

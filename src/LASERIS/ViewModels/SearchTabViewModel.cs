@@ -73,8 +73,6 @@ namespace LASERIS.ViewModels
             QuerySubmitCommand = new AsyncRelayCommand(OnQuerySubmit);
             ReturnedEntries = new ObservableCollection<Entry>();
             
-            _baseApiUrl = "http://localhost:5113/";
-
             SelectableAttributes = new() { "ID", "Name", "Manufacturer Name", "Serial Number", "Order Code", "Item Type", "Signed Out To", "Signed Out To ID"};
             SelectableQuantity = new() {"Zero", "One", "More than one"};
 
